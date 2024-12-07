@@ -3,11 +3,12 @@ import {SignUp} from './Pages/SignUp';
 import { SignUpValidate } from './Pages/SignUpValidate';
 import { SignUpConfirm } from './Pages/SignUpConfirm';
 import { SignIn } from './Pages/SignIn';
+import { ForgotPassword } from './Pages/ForgotPassword';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <SignIn />
+      <ForgotPassword />
     </View>
   );
 }

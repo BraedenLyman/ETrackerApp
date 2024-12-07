@@ -1,31 +1,24 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, ScrollView, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard } from 'react-native';
 
-export function SignIn(){
+export function ForgotPassword(){
 
     return(
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <View style={styles.container}>
                 <Image source={require('../Images/ETrackerLogo.png')} style={styles.logo}/>
-                <Text style={styles.title}>Log In</Text>
-                <Text style={styles.subText}>Sign in to continue.</Text>
+                <Text style={styles.title}>Forgot Password?</Text>
+                <Text style={styles.subText}>That's okay...</Text>
+                <Text style={styles.subText}>Enter your email below and click the button to send a password reset link to your email address.</Text>
                 
                 <View style={styles.userInput}>
-                    <Text style={styles.inputTitle}>Name</Text>
-                    <TextInput style={styles.input} placeholder='John Smith' placeholderTextColor={'black'}/>
-                
-                    <Text style={styles.inputTitle}>Password</Text>
-                    <TextInput style={styles.input} secureTextEntry={true} placeholder='Password123!' placeholderTextColor={'black'}/>
-                    <Text style={styles.forgotPassword}>Forgot password? <Text style={styles.forgotPasswordLink}>Click Here</Text></Text>
+                    <Text style={styles.inputTitle}>Email</Text>
+                    <TextInput style={styles.input} placeholder='johnSmith@gmail.com' placeholderTextColor={'black'}/>
                 </View>    
                 
                 <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText}>Sign In</Text>
+                    <Text style={styles.buttonText}>Forgot Password</Text>
                 </TouchableOpacity>
-
-                <View>
-                    <Text style={styles.signUpText}>Don't have an account? <Text style={styles.signUpLink}>Sign Up</Text></Text>
-                </View>
             </View>
         </TouchableWithoutFeedback>
     );
@@ -53,12 +46,13 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 30,
         textAlign: 'center',
-        marginBottom: 15,
+        marginBottom: 30,
     },
     subText: {
         color: 'white',
+        textAlign: 'center',
         fontSize: 15,
-        marginBottom: 40,
+        marginBottom: 15,
     },
     userInput: {
         width: '80%',
@@ -68,6 +62,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         marginBottom: 10,
         marginLeft: 5,
+        marginTop: 20,
     },
     input: {
         borderWidth: 1,
