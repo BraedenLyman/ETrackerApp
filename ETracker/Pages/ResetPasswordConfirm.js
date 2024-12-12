@@ -1,31 +1,20 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View, Image, TouchableOpacity, TouchableWithoutFeedback, Keyboard } from 'react-native';
 
-export function SignIn(){
+export function ResetPasswordConfirm(){
 
     return(
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <View style={styles.container}>
                 <Image source={require('../Images/ETrackerLogo.png')} style={styles.logo}/>
-                <Text style={styles.title}>Log In</Text>
-                <Text style={styles.subText}>Sign in to continue.</Text>
-                
-                <View style={styles.userInput}>
-                    <Text style={styles.inputTitle}>Name</Text>
-                    <TextInput style={styles.input} placeholder='John Smith' placeholderTextColor={'black'}/>
-                
-                    <Text style={styles.inputTitle}>Password</Text>
-                    <TextInput style={styles.input} secureTextEntry={true} placeholder='Password123!' placeholderTextColor={'black'}/>
-                    <Text style={styles.forgotPassword}>Forgot password? <Text style={styles.forgotPasswordLink}>Click Here</Text></Text>
-                </View>    
+                <Image source={require('../Images/CheckMarkIcon.png')} style={styles.logo}/>
+                <Text style={styles.title}>Reset password link sent!</Text>
+                <Text style={styles.subText}>Check your email for the reset password link</Text>
+              
                 
                 <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText}>Sign In</Text>
+                    <Text style={styles.buttonText}>Back to Sign In</Text>
                 </TouchableOpacity>
-
-                <View>
-                    <Text style={styles.signUpText}>Don't have an account? <Text style={styles.signUpLink}>Sign Up</Text></Text>
-                </View>
             </View>
         </TouchableWithoutFeedback>
     );
@@ -53,12 +42,14 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 30,
         textAlign: 'center',
-        marginBottom: 15,
+        marginBottom: 60,
     },
     subText: {
         color: 'white',
-        fontSize: 15,
-        marginBottom: 40,
+        textAlign: 'center',
+        fontSize: 20,
+        marginBottom: 15,
+        marginHorizontal: 25,
     },
     userInput: {
         width: '80%',
@@ -68,6 +59,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         marginBottom: 10,
         marginLeft: 5,
+        marginTop: 50,
     },
     input: {
         borderWidth: 1,
@@ -76,7 +68,7 @@ const styles = StyleSheet.create({
         height: 50,
         borderRadius: 12,
         marginBottom: 15,
-        color: 'white',
+        color: 'black',
         paddingHorizontal: 15,
     },
     forgotPassword: {

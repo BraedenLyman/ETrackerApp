@@ -4,11 +4,13 @@ import { SignUpValidate } from './Pages/SignUpValidate';
 import { SignUpConfirm } from './Pages/SignUpConfirm';
 import { SignIn } from './Pages/SignIn';
 import { ForgotPassword } from './Pages/ForgotPassword';
+import { ResetPasswordConfirm } from './Pages/ResetPasswordConfirm';
+import { HomePage } from './Pages/HomePage';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <ForgotPassword />
+      <HomePage />
     </View>
   );
 }

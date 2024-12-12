@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, ScrollView, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, TouchableWithoutFeedback, Keyboard } from 'react-native';
 
 export function ForgotPassword(){
 
@@ -17,7 +17,7 @@ export function ForgotPassword(){
                 </View>    
                 
                 <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText}>Forgot Password</Text>
+                    <Text style={styles.buttonText}>Reset Password</Text>
                 </TouchableOpacity>
             </View>
         </TouchableWithoutFeedback>
@@ -46,13 +46,14 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 30,
         textAlign: 'center',
-        marginBottom: 30,
+        marginBottom: 60,
     },
     subText: {
         color: 'white',
         textAlign: 'center',
-        fontSize: 15,
+        fontSize: 20,
         marginBottom: 15,
+        marginHorizontal: 25,
     },
     userInput: {
         width: '80%',
@@ -62,7 +63,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         marginBottom: 10,
         marginLeft: 5,
-        marginTop: 20,
+        marginTop: 50,
     },
     input: {
         borderWidth: 1,
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
         height: 50,
         borderRadius: 12,
         marginBottom: 15,
-        color: 'white',
+        color: 'black',
         paddingHorizontal: 15,
     },
     forgotPassword: {
