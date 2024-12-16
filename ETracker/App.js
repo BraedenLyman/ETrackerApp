@@ -6,12 +6,26 @@ import { SignIn } from './Pages/SignIn';
 import { ForgotPassword } from './Pages/ForgotPassword';
 import { ResetPasswordConfirm } from './Pages/ResetPasswordConfirm';
 import { HomePage } from './Pages/HomePage';
+import { ExpenseTracking } from './Pages/ExpenseTracking';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <HomePage />
-    </View>
+  <NavigationContainer>
+      <Tab.Navigator
+        screenOptions={{
+          tabBarStyle: { backgroundColor: '#6200ee' },
+          tabBarActiveTintColor: '#fff',
+          tabBarInactiveTintColor: '#ddd',
+        }}
+      >
+        <Tab.Screen name="Home" component={HomePage} />
+        <Tab.Screen name="Expenses" component={ExpenseTracking} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
 

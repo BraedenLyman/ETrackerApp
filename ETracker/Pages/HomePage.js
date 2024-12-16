@@ -4,10 +4,6 @@ import { StyleSheet, Text, ScrollView, View, Image, TouchableOpacity, TouchableW
 export function HomePage(){
     return (
         <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-            <View style={styles.header}>
-                {/* Hamberger Icon */}
-                <Text style={styles.headerText}>Home Page</Text>
-            </View>
 
             <View style={styles.savings}>
                 <Text style={styles.savingsHeaderText}>Month Savings</Text>
@@ -94,15 +90,6 @@ export function HomePage(){
                         </View>
                     </View>
                 </ScrollView>
-            </View>
-
-            <View style={styles.navigation}>
-                <View style={styles.navContainer}>
-                    <View style={styles.navImageContainer}>
-                        {/* Image */}
-                    </View>
-                    <Text style={styles.navText}>Home</Text>
-                </View>
             </View>
         </KeyboardAvoidingView>
     )
