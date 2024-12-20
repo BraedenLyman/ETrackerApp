@@ -8,26 +8,27 @@ export function ExpenseTracking(){
         <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
             <View style={styles.header}>
                 <Text style={styles.amountText}>Total Amount After Expenses</Text>
-                <Text style={styles.amount}>$2,400</Text>
+                <Text style={styles.totalAmount}>$2,400</Text>
             </View>
 
             <View style={styles.income}>
                 <Text style={styles.amountText}>Total Income Per Month</Text>
-                <Text style={styles.amount}>$3,000</Text>
+                <TextInput style={styles.amount}>3,000</TextInput>
             </View>
 
             <View style={styles.expensesPerMonth}>
                 <Text style={styles.amountText}>Total Expenses Per Month</Text>
-                <View style={styles.item}>
-                    <Text style={styles.itemText}>Home Insurance:  <Text style={styles.itemAmount}>$300</Text></Text>
-                </View>
-                <View style={styles.item}>
-                    <Text style={styles.itemText}>Home Insurance:  <Text style={styles.itemAmount}>$300</Text></Text>
-                </View>
-                <View style={styles.item}>
-                    <Text style={styles.itemText}>Home Insurance:  <Text style={styles.itemAmount}>$300</Text></Text>
-                </View>
-
+                <ScrollView style={styles.scrollViewContainer}>
+                    <View style={styles.item}>
+                        <Text style={styles.itemText}>Home Insurance:  <Text style={styles.itemAmount}>$300</Text></Text>
+                    </View>
+                    <View style={styles.item}>
+                        <Text style={styles.itemText}>Home Insurance:  <Text style={styles.itemAmount}>$300</Text></Text>
+                    </View>
+                    <View style={styles.item}>
+                        <Text style={styles.itemText}>Home Insurance:  <Text style={styles.itemAmount}>$300</Text></Text>
+                    </View>
+                </ScrollView>
                 <View style={styles.addExpenseButtonContainer}>
                     <TouchableOpacity style={styles.addExpenseButton} onPress={() => setModalVisible(true)}>
                         <Text style={styles.addExpenseText}>Add Expense </Text>
@@ -85,11 +86,21 @@ const styles = StyleSheet.create({
         backgroundColor: 'blue',
         width: '100%',
     },
+    scrollViewContainer: {
+        width: '100%',
+    },
     amountText: {
         textAlign: 'center',
         color: 'white',
         fontSize: 18,
         marginVertical: 15,
+    },
+    totalAmount: {
+        textAlign: 'center',
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 23,
+        marginVertical: 10,
     },
     amount: {
         textAlign: 'center',
@@ -97,6 +108,10 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 23,
         marginVertical: 10,
+        marginHorizontal: 'auto',
+        borderWidth: 1,
+        borderRadius: 10,
+        width: 180,
     },
     income: {
         borderWidth: 1,
@@ -119,6 +134,7 @@ const styles = StyleSheet.create({
     },
     item: {
         marginTop: 10,
+        marginHorizontal: 'auto',
         borderWidth: 1,
         borderRadius: 20,
         width: '80%',
@@ -156,45 +172,10 @@ const styles = StyleSheet.create({
         shadowRadius: 4,
         elevation: 5,
     },
-    modalText: {
-        marginBottom: 20,
-        textAlign: 'center',
-        fontSize: 18,
-        fontWeight: 'bold',
-    },
-    textInput: {
-        borderWidth: 1,
-        borderRadius: 10,
-        height: 25,
-    },
-    costCat: {
-        marginTop: 20,
-        marginBottom: 15,
-    },
-    costCatInput: {
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        marginBottom: 10,
-    },
-    textInputCostCat: {
-        borderWidth: 1,
-        width: 100,
-        borderRadius: 10,
-    },
     buttonContainer: {
         flexDirection: 'row',
         justifyContent: 'center',
-        alignItems: 'center',
-    },
-    addButton: {
-        backgroundColor: 'green',
-        width: 120,
-        padding: 10,
-        borderRadius: 10,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginLeft: 'auto',
-        marginRight: 'auto',
+        height: 50,
     },
     closeButton: {
         borderWidth: 1,
@@ -203,5 +184,43 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         justifyContent: 'center',
         alignItems: 'center',
+        marginRight: 'auto',
+    },
+    modalText: {
+        marginBottom: 20,
+        textAlign: 'center',
+        fontSize: 18,
+        fontWeight: 'bold',
+        marginRight: 'auto',
+        marginBottom: 'auto',
+    },
+    inputTextHeader: {
+        marginBottom: 10,
+    },
+    textInput: {
+        borderWidth: 1,
+        borderRadius: 10,
+        height: 25,
+    },
+    costCat: {
+        marginVertical: 20,
+    },
+    costCatInput: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+    },
+    textInputCostCat: {
+        borderWidth: 1,
+        width: 80,
+        borderRadius: 10,
+    },
+    addButton: {
+        backgroundColor: 'green',
+        width: 120,
+        padding: 10,
+        borderRadius: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginHorizontal: 'auto',
     },
 })
